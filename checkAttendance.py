@@ -8,7 +8,7 @@ with urllib.request.urlopen(url) as attendanceList:
 	for line in attendanceList:
 		line = line.decode('utf-8')
 		data = line.split()
-		data[1] = data[1].strip('b<>')
+		data[1] = data[1].strip('<>')
 		studentPresent.add(data[1])
 studentPresent.remove('CLASS----')
 
